@@ -8,6 +8,7 @@
   <meta name="author" content="Matias Crivolotti">
 
   <link href="http://fonts.googleapis.com/css?family=Sacramento|Open+Sans:300italic,400italic,600italic,400,300,600" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -24,20 +25,39 @@
     <h1>Mi primer año</h1>
     <h2>Cupcakes en Kfar Saba</h2>
     <div class="rsvp">
-      Vas a venir? <small></small> <button class="yes">Sii! :)</button> <button>No :(</button>
+      Vas a venir? <small></small> <button class="btn btn-primary">Sii! :)</button> <button class="btn btn-default btn-sm">No :(</button>
     </div>
   </header>
-  <section class="clearfix">
-    <article>
+  <section class="clearfix row">
+    <article class="col-md-6">
       <h1>Hola a todos!</h1>
       <p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, modi, ipsa, aliquid, inventore consequuntur consequatur sunt ullam perspiciatis voluptas distinctio reprehenderit placeat eum aliquam. Aliquid, mollitia, maxime aperiam optio vel excepturi quam sapiente accusantium officiis atque fuga consectetur porro voluptate sequi numquam ipsa iure libero expedita ipsam et corporis soluta?</strong></p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, corporis, quibusdam, excepturi, dolorem vel laborum accusantium numquam ipsam culpa accusamus quis nulla aperiam eaque placeat.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, numquam totam error consequuntur dolore voluptates reprehenderit tempora saepe officia natus. Libero, recusandae, architecto, tempore, beatae accusantium inventore repellendus unde corporis neque sit quas voluptatum deleniti.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque, sint eum dolor dicta at rem architecto ullam dolorem dolorum numquam rerum facilis accusantium vitae repellat. Cum, tempora, in, itaque ducimus quod quo accusamus velit obcaecati maiores iusto quia officia!</p>
     </article>
-    <aside>
-      <div id="map"></div>
-      Vamos a estar festejando en el parque de kfar sava. <a href="#">Como llegar?</a>
+    <aside class="col-md-6">
+      <div id="directions" class="col-md-4">
+        <form class="form-inline" role="form" action="" method="post" onsubmit="return App.getDirections();">
+          <div class="form-group">
+            <input type="text" id="address" class="form-control input-sm" placeholder="Desde donde llego?">
+          </div>
+          <button type="submit" class="btn btn-link btn-sm"><span class="glyphicon glyphicon-ok-circle"></span></button>
+        </form>
+
+
+
+        <!-- <form class="form-horizontal" role="form" >
+          <div class="form-group">
+            <label for="inputDirections" class="col-md-3 control-label">Desde</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control" id="inputDirections">
+            </div>
+          </div>
+        </form> -->
+      </div>
+      <div id="map" class="col-md-12"></div>
+      Vamos a estar festejando en el parque de kfar sava. <a id="getdirections" href="#map">Como llegar?</a>
     </aside>
   </section>
   <footer>
