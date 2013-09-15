@@ -68,6 +68,7 @@ var App = new function() {
       draggable: true,
     });
     directionsDisplay.setMap(map);
+    directionsDisplay.setPanel(document.getElementById('directions-panel'));
   };
 
   this.showGetDirections = function showGetDirections(e) {
