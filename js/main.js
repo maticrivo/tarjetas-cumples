@@ -11,7 +11,8 @@ var App = new function() {
         }
       },
       map, geocoder, directionsService, directionsDisplay,
-      MAPS_API_KEY = "AIzaSyDeb-THK2Z4pUkL990AKo2VeHpHK8avf3c";
+      MAPS_API_KEY = "AIzaSyDeb-THK2Z4pUkL990AKo2VeHpHK8avf3c",
+      FORECAST_API_KEY = "e35dffdc2d764ddb8992cdc5520f0305";
 
   this.init = function init() {
     var script = document.createElement("script");
@@ -20,6 +21,27 @@ var App = new function() {
     document.body.appendChild(script);
 
     document.getElementById("getdirections").addEventListener("click", App.showGetDirections);
+
+    self.getForecast();
+  };
+
+  this.getForecast = function getForecast() {
+    var elScript = document.createElement('script');
+        elScript.src = "https://api.forecast.io/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2013-10-19T16:00:00+0300?units=si&callback=App.renderForecast";
+        elScript.type = 'text/javascript';
+
+    document.body.appendChild(elScript);
+  };
+
+  this.renderForecast = function renderForecast(data) {
+    if (data && data.currently) {
+      var skycon = new Skycons({"color": "rgb(199,180,218)", "resizeClear": true});
+          skycon.add("skycon", Skycons[data.currently.icon.replace(/[-]/g, "_").toUpperCase()]);
+          skycon.play();
+
+      var elTemperature = document.getElementById("temperature");
+          elTemperature.innerHTML = Math.floor(data.currently.apparentTemperature) + "&deg;C";
+    }
   };
 
   this.initGoogleMaps = function initGoogleMaps() {

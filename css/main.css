@@ -60,14 +60,6 @@ article .disclaimer {
   font-weight: 600;
   text-align: center;
 }
-article .disclaimer:before {
-  content: '';
-  display: inline-block;
-  width: 65px;
-  height: 52px;
-  background: url(../images/paraguas.png) no-repeat;
-  background-size: cover;
-}
 aside {
   padding-bottom: 20px;
 }
