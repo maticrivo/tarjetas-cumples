@@ -28,6 +28,7 @@ var App = new function() {
       center: new google.maps.LatLng(coordinates.party.lat, coordinates.party.lng),
       zoom: 16,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: false,
       keyboardShortcuts: false,
       scrollwheel: false
     });
@@ -82,8 +83,8 @@ var App = new function() {
   };
 
   this.getDirections = function getDirections() {
-    var address = document.getElementById('address').value;
-    geocoder.geocode( { 'address': address}, function(geoResults, geoStatus) {
+    var address = document.getElementById('address');
+    geocoder.geocode( { 'address': address.value}, function(geoResults, geoStatus) {
       if (geoStatus == google.maps.GeocoderStatus.OK) {
         directionsService.route({
           origin: geoResults[0].geometry.location,
@@ -92,6 +93,7 @@ var App = new function() {
         }, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
+            address.blur();
           }
         });
       }
