@@ -1,23 +1,25 @@
-html {
-  font-size: 10px;
+html, body {
   height: 100%;
 }
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -110px; 
+}
+.wrapper:after {
+  content: "";
+  display: block;
+  height: 110px;
+}
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background: #e2e2e2 url(../images/bg.png) repeat;
+  background: #e2e2e2 url(../images/bg@2X.png) repeat;
+  background-size: 41.2rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 1.4rem;
   color: #43484c;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Sacramento', cursive;
   font-weight: 400;
-  text-align: center;
-  margin: 0;
-  padding: 0;
 }
 strong {
   font-weight: 600;
@@ -27,112 +29,89 @@ a {
   text-decoration: none;
   font-weight: 600;
 }
-header {
-  background: #fff;
+header.jumbotron {
+  background: rgba(236, 106, 149, 0.6);
+  color: #fff;
+  border-bottom: 1px solid #d34976;
+  text-align: center;
 }
-  header h1 {
-    font-size: 3.6rem;
-    color: #333;
-    line-height: 10rem;
-    padding: 0 10rem;
-  }
-  header h2 {
-    background: rgba(236, 106, 149, 0.8);
-    color: #fff;
-    font-size: 4.8rem;
-    padding: 7rem 10rem;
-    border-style: solid;
-    border-color: #d34976;
-    border-width: 0.1rem 0;
-  }
-  header h2:before {
-    content: '';
-    display: block;
-    width: 9.9rem;
-    height: 16rem;
-    background: url(../images/cupcake.png) no-repeat;
-    background-size: cover;
-    margin: 0 auto 3.5rem;
-  }
-  header div.rsvp {
-    background: rgba(74, 79, 83, 0.8);
-    border-bottom: 0.1rem solid #1b1d1e;
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.8em;
-    color: #fff;
-    padding: 0 10rem;
-    line-height: 6.5rem;
-  }
-section {
-  padding: 6.5rem 10rem;
+header.jumbotron h1:before {
+  content: '';
+  display: block;
+  width: 75px;
+  height: 121px;
+  background: url(../images/cupcake.png) no-repeat;
+  background-size: cover;
+  margin: 0 auto 35px;
 }
-article {
-  float: left;
-  width: calc(100% - 61.7rem);
-  padding-right: 4rem;
+footer {
+  background: rgba(165, 134, 197, 0.6);
+  color: #fff;
+  border-top: 1px solid #87729d;
+  height: 110px;
+  text-align: center;
 }
-  article h1 {
-    color: #43484c;
-    font-size: 6.4rem;
-    text-align: left;
-  }
+footer h2 {
+  padding: 0;
+  margin: 22px 0 0 0;
+}
+article .disclaimer {
+  color: #a586c5;
+  font-weight: 600;
+  text-align: center;
+}
+article .disclaimer:before {
+  content: '';
+  display: inline-block;
+  width: 65px;
+  height: 52px;
+  background: url(../images/paraguas.png) no-repeat;
+  background-size: cover;
+}
 aside {
-  position: relative;
-  float: right;
-  font-size: 1.6rem;
-  font-style: italic;
-  font-weight: 400;
-  color: #74787b;
+  padding-bottom: 20px;
 }
-  aside #directions {
-    font-style: normal;
-    font-size: 1.3rem;
-    font-weight: 300;
-    position: absolute;
-    z-index: 10;
-    top: 1.5rem;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    display: none;
-  }
-  aside #directions button {
-    color: #43484c;
-  }
-  aside #map {
-    height: 48.7rem;
-    -webkit-box-shadow: 0 0.5rem 0.5rem rgba(2,2,2,.15);
-    -moz-box-shadow: 0 0.5rem 0.5rem rgba(2,2,2,.15);
-    box-shadow: 0 0.5rem 0.5rem rgba(2,2,2,.15);
-    border: 0.1rem solid #fff;
-    box-sizing: border-box;
-    margin-bottom: 3rem;
+aside #map {
+  height: 300px;
+  -webkit-box-shadow: 0 5px 5px rgba(2,2,2,.15);
+  -moz-box-shadow: 0 5px 5px rgba(2,2,2,.15);
+  box-shadow: 0 5px 5px rgba(2,2,2,.15);
+  border: 1px solid #fff;
+  margin-bottom: 10px;
+}
+aside #directions {
+  width: 50%;
+  position: absolute;
+  z-index: 10;
+  top: 6px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: none;
+}
+aside #directions-panel:not(:empty) {
+  display: block;
+}
+aside #directions-panel .adp-placemark {
+  background-color: rgba(238, 238, 238, 0.6);
+}
+
+.form-control {
+  background-color: rgba(255,255,255,0.8);
+}
+
+
+@media screen and (min-width: 768px) {
+  header.jumbotron h1:before {
+    width: 99px;
+    height: 160px;
   }
   aside #directions-panel {
-    position: absolute;
-    bottom: 75px;
-    right: 25px;
-    background: #fff;
-    width: 300px;
-    height: 200px;
-    overflow: auto;
-    padding: 10px;
-    font-size: 80%;
-    display: none;
+    font-size: 90%;
   }
-  aside #directions-panel:not(:empty) {
-    display: block;
+}
+@media screen and (min-width: 992px) {
+  aside #map {
+    height: 400px;
   }
-footer {
-  font-family: 'Sacramento', cursive;
-  font-weight: 400;
-  background: rgba(165, 134, 197, 0.8);
-  padding: 0 10rem;
-  font-size: 4.4rem;
-  color: #fff;
-  text-align: center;
-  border-style: solid;
-  border-color: #87729d;
-  border-width: 0.1rem 0;
 }

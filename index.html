@@ -1,62 +1,63 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Olivia cumple 1 año</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
 
-  <title>Olivia cumple 1</title>
-  <meta name="description" content="Olivia cumple 1">
-  <meta name="author" content="Matias Crivolotti">
-
-  <link href="http://fonts.googleapis.com/css?family=Sacramento|Open+Sans:300italic,400italic,600italic,400,300,600" rel="stylesheet" type="text/css">
-  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="css/main.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-18048495-3', 'oliviacp.com.ar');
-    ga('send', 'pageview');
-  </script>
-  <header>
-    <h1>Mi primer año</h1>
-    <h2>Cupcakes en Kfar Saba</h2>
-    <div class="rsvp">
-      Vas a venir? <small></small> <button class="btn btn-primary">Sii! :)</button> <button class="btn btn-default btn-sm">No :(</button>
-    </div>
-  </header>
-  <section class="clearfix row">
-    <article class="col-md-6">
-      <h1>Hola a todos!</h1>
-      <p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, modi, ipsa, aliquid, inventore consequuntur consequatur sunt ullam perspiciatis voluptas distinctio reprehenderit placeat eum aliquam. Aliquid, mollitia, maxime aperiam optio vel excepturi quam sapiente accusantium officiis atque fuga consectetur porro voluptate sequi numquam ipsa iure libero expedita ipsam et corporis soluta?</strong></p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, corporis, quibusdam, excepturi, dolorem vel laborum accusantium numquam ipsam culpa accusamus quis nulla aperiam eaque placeat.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, numquam totam error consequuntur dolore voluptates reprehenderit tempora saepe officia natus. Libero, recusandae, architecto, tempore, beatae accusantium inventore repellendus unde corporis neque sit quas voluptatum deleniti.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque, sint eum dolor dicta at rem architecto ullam dolorem dolorum numquam rerum facilis accusantium vitae repellat. Cum, tempora, in, itaque ducimus quod quo accusamus velit obcaecati maiores iusto quia officia!</p>
-    </article>
-    <aside class="col-md-6">
-      <div id="directions" class="col-md-4">
-        <form class="form-inline" role="form" action="" method="post" onsubmit="return App.getDirections();">
-          <div class="form-group">
-            <input type="text" id="address" class="form-control input-sm" placeholder="Desde donde llego?">
-          </div>
-          <button type="submit" class="btn btn-link btn-sm"><span class="glyphicon glyphicon-ok-circle"></span></button>
-        </form>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Sacramento|Open+Sans:300italic,400italic,600italic,400,300,600">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+    <section class="wrapper">
+      <header class="jumbotron">
+        <div class="container">
+          <h1>Mi primer año</h1>
+        </div>
+      </header>
+      
+      <div class="container">
+        <div class="row">
+          <article class="col-md-5">
+            <p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, modi, ipsa, aliquid, inventore consequuntur consequatur sunt ullam perspiciatis voluptas distinctio reprehenderit placeat eum aliquam. Aliquid, mollitia, maxime aperiam optio vel excepturi quam sapiente accusantium officiis atque fuga consectetur porro voluptate sequi numquam ipsa iure libero expedita ipsam et corporis soluta?</strong></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, corporis, quibusdam, excepturi, dolorem vel laborum accusantium numquam ipsam culpa accusamus quis nulla aperiam eaque placeat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, numquam totam error consequuntur dolore voluptates reprehenderit tempora saepe officia natus. Libero, recusandae, architecto, tempore, beatae accusantium inventore repellendus unde corporis neque sit quas voluptatum deleniti.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, eaque, sint eum dolor dicta at rem architecto ullam dolorem dolorum numquam rerum facilis accusantium vitae repellat. Cum, tempora, in, itaque ducimus quod quo accusamus velit obcaecati maiores iusto quia officia!</p>
+            <p class="disclaimer">Atentos a saldivar, se suspende por lluvia!</p>
+          </article>
+          <hr class="visible-xs">
+          <aside class="col-md-7">
+            <div id="map" class="col-md-12"></div>
+            <div id="directions" class="col-md-5">
+              <form role="form" action="" method="post" onsubmit="return App.getDirections();">
+                <input type="text" id="address" class="form-control input-sm" placeholder="Desde donde llego?">
+              </form>
+            </div>
+            Vamos a estar festejando en el parque de kfar sava. <a id="getdirections" href="#map">Como llegar?</a>
+            <div id="directions-panel"></div>
+          </aside>
+        </div>
       </div>
-      <div id="map" class="col-md-12"></div>
-      <div id="directions-panel"></div>
-      Vamos a estar festejando en el parque de kfar sava. <a id="getdirections" href="#map">Como llegar?</a>
-    </aside>
-  </section>
-  <footer>
-    <p>
-      Espero verlos a todos!
-      <br/>
-      Olivia.
-    </p>
-  </footer>
-  <script src="js/main.js"></script>
-</body>
+    </section>
+
+    <footer>
+      <div class="container">
+        <h2>Espero verlos a todos!<br/>Olivia.</h2>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18048495-3', 'oliviacp.com.ar');
+      ga('send', 'pageview');
+    </script>
+  </body>
 </html>
