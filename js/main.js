@@ -35,7 +35,7 @@ var App = new function() {
 
   this.renderForecast = function renderForecast(data) {
     if (data && data.currently) {
-      var skycon = new Skycons({"color": "rgb(199,180,218)", "resizeClear": true});
+      var skycon = new Skycons({"color": "#a586c5", "resizeClear": true});
           skycon.add("skycon", Skycons[data.currently.icon.replace(/[-]/g, "_").toUpperCase()]);
           skycon.play();
 
