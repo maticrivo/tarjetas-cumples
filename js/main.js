@@ -1,5 +1,6 @@
 var App = new function() {
   var self = this,
+      elScript,
       coordinates = {
         party: {
           lat: 32.182387,
@@ -26,21 +27,23 @@ var App = new function() {
   };
 
   this.getForecast = function getForecast() {
-    var elScript = document.createElement('script');
-        elScript.src = "https://api.forecast.io/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2013-10-19T16:00:00+0300?units=si&callback=App.renderForecast";
-        elScript.type = 'text/javascript';
+    elScript = document.createElement('script');
+    elScript.src = "https://api.forecast.io/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2013-10-19T16:00:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
+    elScript.type = 'text/javascript';
 
     document.body.appendChild(elScript);
   };
 
-  this.renderForecast = function renderForecast(data) {
-    if (data && data.currently) {
+  this.renderForecast = function renderForecast(response) {
+    console.log(response);
+    elScript && elScript.parentNode && elScript.parentNode.removeChild(elScript);
+    if (response && response.currently) {
       var skycon = new Skycons({"color": "#a586c5", "resizeClear": true});
-          skycon.add("skycon", Skycons[data.currently.icon.replace(/[-]/g, "_").toUpperCase()]);
+          skycon.add("skycon", Skycons[response.currently.icon.replace(/[-]/g, "_").toUpperCase()]);
           skycon.play();
 
       var elTemperature = document.getElementById("temperature");
-          elTemperature.innerHTML = Math.floor(data.currently.apparentTemperature) + "&deg;C";
+          elTemperature.innerHTML = Math.round(response.currently.apparentTemperature) + "&deg;C";
     }
   };
 

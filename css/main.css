@@ -58,7 +58,9 @@ footer h2 {
 article .disclaimer {
   color: #a586c5;
   font-weight: 700;
-  text-align: center;
+}
+article .disclaimer canvas {
+  vertical-align: middle;
 }
 aside {
   padding-bottom: 20px;
