@@ -3,12 +3,16 @@ var App = new function() {
       elScript,
       coordinates = {
         party: {
-          lat: 32.182387,
-          lng: 34.921941
+          lat: 32.187204,
+          lng: 34.851346
         },
         parking: {
-          lat: 32.182659,
-          lng: 34.919520
+          lat: 32.183131,
+          lng: 34.852891
+        },
+        paidParking: {
+          lat: 32.185374,
+          lng: 34.853084
         }
       },
       map, geocoder, directionsService, directionsDisplay,
@@ -51,7 +55,7 @@ var App = new function() {
     google.maps.visualRefresh = true;
     map = new google.maps.Map(document.getElementById("map"), {
       center: new google.maps.LatLng(coordinates.party.lat, coordinates.party.lng),
-      zoom: 16,
+      zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       mapTypeControl: false,
       keyboardShortcuts: false,
@@ -66,11 +70,13 @@ var App = new function() {
       position: new google.maps.LatLng(coordinates.party.lat, coordinates.party.lng)
     });
     var partyInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h1>Cumple Oli</h1><div><p>Los esperamos a las  el Sabado 19/10 a las 16:00</p></div></div>'
+      content: '<div id="content"><h1>Cumple Olivia</h1><div><p>Los esperamos el Sabado 19/10 a las 16:00</p></div></div>'
     });
+    partyInfoWindow.open(map,partyMarker);
     google.maps.event.addListener(partyMarker, 'click', function() {
       partyInfoWindow.open(map,partyMarker);
       parkingInfoWindow.close();
+      paidParkingInfoWindow.close();
     });
 
     var parkingMarker = new google.maps.Marker({
@@ -81,11 +87,28 @@ var App = new function() {
       position: new google.maps.LatLng(coordinates.parking.lat, coordinates.parking.lng)
     });
     var parkingInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h1>Estacionamiento</h1><div><p>Aca hay mucho lugar para estacionar</p></div></div>'
+      content: '<div id="content"><h1>Estacionamiento</h1><div><p>Gratuito</p></div></div>'
     });
     google.maps.event.addListener(parkingMarker, 'click', function() {
       parkingInfoWindow.open(map,parkingMarker);
       partyInfoWindow.close();
+      paidParkingInfoWindow.close();
+    });
+
+    var paidParkingMarker = new google.maps.Marker({
+      map:map,
+      icon: "/images/parking-meter.png",
+      draggable:false,
+      animation: google.maps.Animation.DROP,
+      position: new google.maps.LatLng(coordinates.paidParking.lat, coordinates.paidParking.lng)
+    });
+    var paidParkingInfoWindow = new google.maps.InfoWindow({
+      content: '<div id="content"><h1>Estacionamiento</h1><div><p>Gratuito para los toshavei Ra\'anana o con parquimetro / Pango</p></div></div>'
+    });
+    google.maps.event.addListener(paidParkingMarker, 'click', function() {
+      paidParkingInfoWindow.open(map,paidParkingMarker);
+      partyInfoWindow.close();
+      parkingInfoWindow.close();
     });
 
     geocoder = new google.maps.Geocoder();
