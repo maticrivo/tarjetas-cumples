@@ -89,6 +89,10 @@ aside #directions-panel .adp-placemark {
 .form-control {
   background-color: rgba(255,255,255,0.8);
 }
+.modal-footer .alert {
+  display: inline-block;
+  margin-bottom: 0;
+}
 
 
 @media screen and (min-width: 768px) {

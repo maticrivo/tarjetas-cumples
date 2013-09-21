@@ -19,6 +19,8 @@ var App = new function() {
       MAPS_API_KEY = "AIzaSyDeb-THK2Z4pUkL990AKo2VeHpHK8avf3c",
       FORECAST_API_KEY = "e35dffdc2d764ddb8992cdc5520f0305";
 
+  this.rsvp = false;
+
   this.init = function init() {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -26,6 +28,15 @@ var App = new function() {
     document.body.appendChild(script);
 
     document.getElementById("getdirections").addEventListener("click", App.showGetDirections);
+
+    document.getElementById("ifrm").setAttribute("onload", "if(App.rsvp) {App.rsvpSent();}");
+
+    $('#rsvp').on('hidden.bs.modal', function () {
+      document.getElementById("ss-form").reset();
+      document.getElementById("rsvp.submit").removeAttribute("disabled");
+      document.getElementById("rsvp.message").classList.remove("in");
+      self.rsvp = false;
+    });
 
     self.getForecast();
   };
@@ -39,7 +50,6 @@ var App = new function() {
   };
 
   this.renderForecast = function renderForecast(response) {
-    console.log(response);
     elScript && elScript.parentNode && elScript.parentNode.removeChild(elScript);
     if (response && response.currently) {
       var skycon = new Skycons({"color": "#a586c5", "resizeClear": true});
@@ -70,7 +80,7 @@ var App = new function() {
       position: new google.maps.LatLng(coordinates.party.lat, coordinates.party.lng)
     });
     var partyInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h1>Cumple Olivia</h1><div><p>Los esperamos el Sabado 19/10 a las 16:00</p></div></div>'
+      content: '<div id="content"><h2>Cumple Olivia</h2><div><p>Los esperamos el <strong>Sabado 19/10</strong> a las <strong>16:00</strong></p></div></div>'
     });
     partyInfoWindow.open(map,partyMarker);
     google.maps.event.addListener(partyMarker, 'click', function() {
@@ -87,7 +97,7 @@ var App = new function() {
       position: new google.maps.LatLng(coordinates.parking.lat, coordinates.parking.lng)
     });
     var parkingInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h1>Estacionamiento</h1><div><p>Gratuito</p></div></div>'
+      content: '<div id="content"><h2>Estacionamiento</h2><div><p>Gratuito</p></div></div>'
     });
     google.maps.event.addListener(parkingMarker, 'click', function() {
       parkingInfoWindow.open(map,parkingMarker);
@@ -103,7 +113,7 @@ var App = new function() {
       position: new google.maps.LatLng(coordinates.paidParking.lat, coordinates.paidParking.lng)
     });
     var paidParkingInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h1>Estacionamiento</h1><div><p>Gratuito para los toshavei Ra\'anana o con parquimetro / Pango</p></div></div>'
+      content: '<div id="content"><h2>Estacionamiento</h2><div><p>Gratuito para los toshavei Ra\'anana o con parquimetro / Pango</p></div></div>'
     });
     google.maps.event.addListener(paidParkingMarker, 'click', function() {
       paidParkingInfoWindow.open(map,paidParkingMarker);
@@ -121,13 +131,10 @@ var App = new function() {
   };
 
   this.showGetDirections = function showGetDirections(e) {
-    e.preventDefault();
-
     var directionsDiv = document.getElementById("directions");
         directionsDiv.style.display = "block";
 
     directionsDiv.querySelector("input").focus();
-    return false;
   };
 
   this.getDirections = function getDirections() {
@@ -147,6 +154,23 @@ var App = new function() {
       }
     });
     return false;
+  };
+
+  this.validateRsvp = function validateRsvp() {
+    if (!document.getElementById("nombre").value.trim().length) {
+      alert('¿Quien sos?');
+      return false;
+    }
+    if (!document.getElementById("venis").checked && !document.getElementById("novenis").checked) {
+      alert("¿Venis o no?");
+      return false;
+    }
+    self.rsvp = true;
+    document.getElementById("rsvp.submit").setAttribute("disabled", "disabled");
+  };
+
+  this.rsvpSent = function rsvpSent() {
+    document.getElementById("rsvp.message").classList.add("in");
   };
 };
 window.onload = App.init;
