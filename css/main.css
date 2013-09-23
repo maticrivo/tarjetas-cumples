@@ -44,6 +44,13 @@ header.jumbotron h1:before {
   background-size: cover;
   margin: 0 auto 35px;
 }
+header .flags {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 33px;
+  background: url(../images/flags.png) repeat-x center top;
+  background-size: auto 100%;
+}
 footer {
   background: rgba(165, 134, 197, 0.6);
   color: #fff;
@@ -93,12 +100,18 @@ aside #directions-panel .adp-placemark {
   display: inline-block;
   margin-bottom: 0;
 }
+body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
+  margin-right: 0;
+}
 
 
 @media screen and (min-width: 768px) {
   header.jumbotron h1:before {
     width: 99px;
     height: 160px;
+  }
+  header .flags {
+    height: 66px;
   }
   aside #directions-panel {
     font-size: 90%;

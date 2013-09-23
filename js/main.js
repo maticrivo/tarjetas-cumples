@@ -43,7 +43,7 @@ var App = new function() {
 
   this.getForecast = function getForecast() {
     elScript = document.createElement('script');
-    elScript.src = "https://api.forecast.io/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2013-10-19T16:00:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
+    elScript.src = "https://api.forecast.io/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2013-10-19T15:00:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
     elScript.type = 'text/javascript';
 
     document.body.appendChild(elScript);
@@ -80,7 +80,7 @@ var App = new function() {
       position: new google.maps.LatLng(coordinates.party.lat, coordinates.party.lng)
     });
     var partyInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h2>Cumple Olivia</h2><div><p>Los esperamos el <strong>Sabado 19/10</strong> a las <strong>16:00</strong></p></div></div>'
+      content: '<div id="content"><h2>Cumple Olivia</h2><div><p>Los esperamos el <strong>Sabado 19/10</strong> a las <strong>15:00</strong></p></div></div>'
     });
     partyInfoWindow.open(map,partyMarker);
     google.maps.event.addListener(partyMarker, 'click', function() {

@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Olivia cumple 1 año</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Olivia cumple 1 año</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Sacramento|Open+Sans:300italic,400italic,300,400,600,700">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-  </head>
-  <body>
-    <section class="wrapper">
-      <header class="jumbotron">
-        <div class="container">
-          <h1>Mi primer año</h1>
-        </div>
-      </header>
-      
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Sacramento|Open+Sans:300italic,400italic,300,400,600,700">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+  <section class="wrapper">
+    <header class="jumbotron">
+      <div class="flags"></div>
       <div class="container">
-        <div class="row">
-          <article class="col-md-5">
-            <p>El quince de octubre Olivia y todos cumplimos un año como mamá, papá, abuelas, abuelos, tias, tios, bis abuelas, bis abuelos, primas, primos, amigos, etc. </p>
-            <p>Lo celebramos el <strong>19/10 a las 16 horas</strong> en Lev Hapark Ra'anana. <br>
+        <h1>Mi primer año</h1>
+      </div>
+    </header>
+    
+    <div class="container">
+      <div class="row">
+        <article class="col-md-5">
+          <p>El quince de octubre Olivia y todos cumplimos un año como mamá, papá, abuelas, abuelos, tias, tios, bis abuelas, bis abuelos, primas, primos, amigos, etc. </p>
+          <p>Lo celebramos el <strong>19/10 a las 15:00 horas</strong> en Lev Hapark Ra'anana. <br>
             <a id="getdirections" href="#map">¿Cómo llegar?</a> <em>En el mapa chequea los estacionamientos y el lugar de encuentro.</em></p>
             <p>En caso de lluvia se suspende, estate atento al <strong>pronóstico para el día del evento: <span id="temperature"><img src="images/loader.gif" /></span> <canvas id="skycon" width="48" height="48"></canvas></strong></p>
             <p>Confirmanos tu presencia, completando este formulario con tu nombre y con quienes venis en este <a href="#rsvp" data-toggle="modal">link</a>.</p>
@@ -52,7 +53,6 @@
     <div class="modal fade" id="rsvp" tabindex="-1" role="dialog">
       <div class="modal-dialog">
         <iframe id="ifrm" name="ifrm" class="hide"></iframe>
-        <iframe name="hidden_iframe" id="hidden_iframe" class="hidden" ></iframe>
         <form class="form-horizontal" role="form" action="https://docs.google.com/forms/d/1T2Wav1txqw3RucyNtunRlFfO-xpsiQ95099ydYD5Imk/formResponse" method="POST" id="ss-form" target="ifrm" onsubmit="return App.validateRsvp();">
           <div class="modal-content">
             <div class="modal-header">
@@ -99,12 +99,12 @@
     <script src="js/main.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-18048495-3', 'oliviacp.com.ar');
       ga('send', 'pageview');
     </script>
   </body>
-</html>
+  </html>
