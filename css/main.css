@@ -1,66 +1,52 @@
 html, body {
   height: 100%;
 }
-.wrapper {
-  min-height: 100%;
-  margin-bottom: -110px; 
-}
-.wrapper:after {
-  content: "";
-  display: block;
-  height: 110px;
-}
 body {
-  background: #e2e2e2 url(../images/bg@2X.png) repeat;
-  background-size: 41.2rem;
+  background: rgb(126, 213, 212);
   font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  color: #43484c;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Sacramento', cursive;
-  font-weight: 400;
+  font-family: 'Shadows Into Light Two', cursive;
+  font-weight: 300;
 }
 strong {
   font-weight: 600;
 }
 a {
-  color: #18a8bc;
+  color: #9274BA;
   text-decoration: none;
   font-weight: 600;
 }
-header.jumbotron {
-  background: rgba(236, 106, 149, 0.6);
+a:hover {
+  color: #9274BA;
+}
+.container .jumbotron {
+  background: rgb(126, 213, 212);
   color: #fff;
-  border-bottom: 1px solid #d34976;
   text-align: center;
-}
-header.jumbotron h1:before {
-  content: '';
-  display: block;
-  width: 75px;
-  height: 121px;
-  background: url(../images/cupcake.png) no-repeat;
-  background-size: cover;
-  margin: 0 auto 35px;
-}
-header .flags {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 33px;
-  background: url(../images/flags.png) repeat-x center top;
-  background-size: auto 100%;
-}
-footer {
-  background: rgba(165, 134, 197, 0.6);
-  color: #fff;
-  border-top: 1px solid #87729d;
-  height: 110px;
-  text-align: center;
-}
-footer h2 {
   padding: 0;
-  margin: 22px 0 0 0;
+  margin-bottom: 70px;
+  margin-top: 30px;
+}
+.container .jumbotron h1 {
+  position: relative;
+  padding-left: 85px;
+}
+.container .jumbotron h1:before {
+  content: '';
+  width: 108px;
+  height: 149px;
+  background: transparent url(../images/buho-torta.png);
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;;
+}
+article {
+  position: relative;
 }
 article canvas {
   vertical-align: middle;
@@ -68,12 +54,28 @@ article canvas {
 aside {
   padding-bottom: 20px;
 }
+aside #map-container {
+  position: relative;
+  padding-top: 132px;
+}
+#buho-regalos {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -135px;
+  width: 270px;
+  height: 127px;
+  background: transparent url(../images/buho-regalos.png);
+  background-size: cover;
+}
 aside #map {
-  height: 300px;
+  color: #979797;
+  height: 400px;
   -webkit-box-shadow: 0 5px 5px rgba(2,2,2,.15);
   -moz-box-shadow: 0 5px 5px rgba(2,2,2,.15);
   box-shadow: 0 5px 5px rgba(2,2,2,.15);
   border: 1px solid #fff;
+  margin-top: -15px;
   margin-bottom: 10px;
 }
 aside #directions {
@@ -93,6 +95,16 @@ aside #directions-panel .adp-placemark {
   background-color: rgba(238, 238, 238, 0.6);
 }
 
+#buho-globos {
+  position: absolute;
+  bottom: -70px;
+  right: 0;
+  width: 93px;
+  height: 200px;
+  background: transparent url(../images/buho-globos.png);
+  background-size: cover;
+}
+
 .form-control {
   background-color: rgba(255,255,255,0.8);
 }
@@ -104,21 +116,8 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   margin-right: 0;
 }
 
-
-@media screen and (min-width: 768px) {
-  header.jumbotron h1:before {
-    width: 99px;
-    height: 160px;
-  }
-  header .flags {
-    height: 66px;
-  }
-  aside #directions-panel {
-    font-size: 90%;
-  }
-}
-@media screen and (min-width: 992px) {
-  aside #map {
-    height: 400px;
+@media (max-width: 767px) {
+  header.jumbotron h1 {
+    padding-top: 27px;
   }
 }

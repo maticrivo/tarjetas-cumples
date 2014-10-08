@@ -3,108 +3,106 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Olivia cumple 1 año</title>
+  <title>Olivia cumple 2 años</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Sacramento|Open+Sans:300italic,400italic,300,400,600,700">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
   <section class="wrapper">
-    <header class="jumbotron">
-      <div class="flags"></div>
-      <div class="container">
-        <h1>Mi primer año</h1>
-      </div>
-    </header>
-    
     <div class="container">
       <div class="row">
         <article class="col-md-5">
-          <p>El quince de octubre Olivia y todos cumplimos un año como mamá, papá, abuelas, abuelos, tias, tios, bis abuelas, bis abuelos, primas, primos, amigos, etc. </p>
-          <p>Lo celebramos el <strong>19/10 a las 15:00 horas</strong> en Lev Hapark Ra'anana. <br>
-            <a id="getdirections" href="#map">¿Cómo llegar?</a> <em>En el mapa chequea los estacionamientos y el lugar de encuentro.</em></p>
-            <p>En caso de lluvia se suspende, estate atento al <strong>pronóstico para el día del evento: <span id="temperature"><img src="images/loader.gif" /></span> <canvas id="skycon" width="48" height="48"></canvas></strong></p>
-            <p>Confirmanos tu presencia, completando este formulario con tu nombre y con quienes venis en este <a href="#rsvp" data-toggle="modal">link</a>.</p>
-          </article>
-          <hr class="visible-xs">
-          <aside class="col-md-7">
-            <div id="map" class="col-md-12"></div>
+          <header class="jumbotron">
+            <h1>Cumple Olivia<br/>2 años</h1>
+          </header>
+          <p>Celebramos el cumple de Olivia el <strong>16/10</strong> a las <strong>15:30 horas</strong> en el parque de Kfar Saba.</p>
+          <p><a id="getdirections" href="#map">¿Cómo llegar?</a></p>
+          <p>Estate atento al pronostico, en caso de lluvia se suspende.<br/>
+          <span id="temperature"><img src="images/loader.gif" /></span> <canvas id="skycon" width="48" height="48"></canvas></p>
+          <p>Confirmanos tu presencia, completando este<br/>formulario con tu nombre y con quienes venis<br/>en este <a href="#rsvp" data-toggle="modal">link</a>.</p>
+          <div id="buho-globos" class="visible-lg-block"></div>
+        </article>
+        <hr class="visible-xs">
+        <aside class="col-md-7">
+          <div class="row">
+            <div id="map-container">
+              <div id="map" class="col-md-12"></div>
+              <div id="buho-regalos"></div>
+            </div>
+          </div>
+          <div class="row">
             <div id="directions" class="col-md-5">
               <form role="form" action="" method="post" onsubmit="return App.getDirections();">
                 <input type="text" id="address" class="form-control input-sm" placeholder="Desde donde llego?">
               </form>
             </div>
-            <em>Celebramos en Lev Hapark Ra'anana</em>
+            <em>Celebramos en el parque de Kfar Saba</em>
             <div id="directions-panel"></div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <h2>Espero verlos a todos!<br/>Olivia.</h2>
-      </div>
-    </footer>
-
-    <div class="modal fade" id="rsvp" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <iframe id="ifrm" name="ifrm" class="hide"></iframe>
-        <form class="form-horizontal" role="form" action="https://docs.google.com/forms/d/1T2Wav1txqw3RucyNtunRlFfO-xpsiQ95099ydYD5Imk/formResponse" method="POST" id="ss-form" target="ifrm" onsubmit="return App.validateRsvp();">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h2 class="modal-title">Confirmación</h2>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label for="nombre" class="col-md-4 control-label">Nombre</label>
-                <div class="col-md-8">
-                  <input type="text" class="form-control" id="nombre" name="entry.674205106" placeholder="Nombre" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="venis" class="col-md-4 control-label">Vas a venir?</label>
-                <div class="col-md-8">
-                  <div class="radio">
-                    <label><input type="radio" name="entry.235877356" id="venis" value="Si" required> Si</label>
-                  </div>
-                  <div class="radio">
-                    <label><input type="radio" name="entry.235877356" id="novenis" value="No" required> No</label>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="conquien" class="col-md-4 control-label">Con quienes venis?</label>
-                <div class="col-md-8">
-                  <textarea class="form-control" rows="3" id="conquien" name="entry.1619805491" placeholder="Con quienes venis?"></textarea>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <div class="alert alert-success fade" id="rsvp.message">Gracias!</div> <button id="rsvp.submit" type="submit" class="btn btn-primary">Enviar confirmación</button>
-            </div>
           </div>
-        </form>
+        </aside>
       </div>
     </div>
+  </section>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/lib/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="js/lib/bootstrap.min.js"></script>
-    <script src="js/skycons.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <div class="modal fade" id="rsvp" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <iframe id="ifrm" name="ifrm" class="hide"></iframe>
+      <form class="form-horizontal" role="form" action="https://docs.google.com/forms/d/1T2Wav1txqw3RucyNtunRlFfO-xpsiQ95099ydYD5Imk/formResponse" method="POST" id="ss-form" target="ifrm" onsubmit="return App.validateRsvp();">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Confirmación</h2>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="nombre" class="col-md-4 control-label">Nombre</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="nombre" name="entry.674205106" placeholder="Nombre" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="venis" class="col-md-4 control-label">Vas a venir?</label>
+              <div class="col-md-8">
+                <div class="radio">
+                  <label><input type="radio" name="entry.235877356" id="venis" value="Si" required> Si</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="entry.235877356" id="novenis" value="No" required> No</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="conquien" class="col-md-4 control-label">Con quienes venis?</label>
+              <div class="col-md-8">
+                <textarea class="form-control" rows="3" id="conquien" name="entry.1619805491" placeholder="Con quienes venis?"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="alert alert-success fade" id="rsvp.message">Gracias!</div> <button id="rsvp.submit" type="submit" class="btn btn-primary">Enviar confirmación</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 
-      ga('create', 'UA-18048495-3', 'oliviacp.com.ar');
-      ga('send', 'pageview');
-    </script>
-  </body>
-  </html>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/lib/jquery-1.10.2.min.js"><\/script>')</script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="js/skycons.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-18048495-3', 'oliviacp.com.ar');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
