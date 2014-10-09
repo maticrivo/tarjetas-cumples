@@ -121,7 +121,7 @@ var App = new function() {
       if (geoStatus == google.maps.GeocoderStatus.OK) {
         directionsService.route({
           origin: geoResults[0].geometry.location,
-          destination: new google.maps.LatLng(coordinates.parking.lat, coordinates.parking.lng),
+          destination: new google.maps.LatLng(coordinates.paidParking.lat, coordinates.paidParking.lng),
           travelMode: google.maps.DirectionsTravelMode.DRIVING
         }, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {
