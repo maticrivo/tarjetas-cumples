@@ -143,8 +143,9 @@ var App = new function() {
       alert("¿Venis o no?");
       return false;
     }
-    self.rsvp = true;
     document.getElementById("rsvp.submit").setAttribute("disabled", "disabled");
+    self.rsvp = true;
+    return true;
   };
 
   this.rsvpSent = function rsvpSent() {

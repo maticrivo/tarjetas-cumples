@@ -105,6 +105,9 @@ aside #directions-panel .adp-placemark {
   background-size: cover;
 }
 
+.modal {
+  color: #979797;
+}
 .form-control {
   background-color: rgba(255,255,255,0.8);
 }
