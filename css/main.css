@@ -1,16 +1,20 @@
+* {
+  box-sizing: border-box;
+}
 html, body {
   height: 100%;
 }
 body {
-  background: rgb(126, 213, 212);
+  background: #ffffff;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  color: #ffffff;
+  color: #000000;
   font-size: 16px;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Shadows Into Light Two', cursive;
-  font-weight: 300;
+  font-family: 'Montserrat', serif;
+  font-weight: 400;
+  text-align: center;
 }
 h3 {
   margin-top: 10px;
@@ -26,9 +30,17 @@ a {
 a:hover {
   color: #9274BA;
 }
-.container .jumbotron {
-  background: rgb(126, 213, 212);
+em {
+  background: #000000;
   color: #fff;
+  font-style: normal;
+  padding: 0 5px;
+}
+header {
+  padding-bottom: 60px;
+}
+.container .jumbotron {
+  background: #ffffff;
   text-align: center;
   padding: 0;
   margin-bottom: 70px;
@@ -36,17 +48,6 @@ a:hover {
 }
 .container .jumbotron h1 {
   position: relative;
-  padding-left: 85px;
-}
-.container .jumbotron h1:before {
-  content: '';
-  width: 108px;
-  height: 149px;
-  background: transparent url(../images/buho-torta.png);
-  background-size: cover;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 article {
   position: relative;
@@ -59,7 +60,6 @@ aside {
 }
 aside #map-container {
   position: relative;
-  padding-top: 132px;
 }
 #buho-regalos {
   position: absolute;
@@ -85,11 +85,11 @@ aside #directions {
   width: 50%;
   position: absolute;
   z-index: 10;
-  top: 126px;
   left: 0;
   right: 0;
   margin: 0 auto;
   display: none;
+  top: 0;
 }
 aside #directions-panel:not(:empty) {
   display: block;
@@ -120,6 +120,56 @@ aside #directions-panel .adp-placemark {
 }
 body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
   margin-right: 0;
+}
+
+.bird {
+  border-top: 200px solid transparent;
+  border-right: 200px solid #05B900;
+  position: absolute;
+  left: 50%;
+  top: 150px;
+}
+
+.bird:before {
+ content: "";
+ border-top: 35px solid transparent;
+ border-bottom: 10px solid transparent;
+ border-left: 30px solid #91CD6D;
+ position: absolute;
+ top: -200px;
+ left: 200px;
+}
+
+.bird:after {
+ content: "";
+ border-bottom: 140px solid transparent;
+ border-top: 10px solid transparent;
+ border-right: 180px solid #91CD6D;
+ position: absolute;
+ top: -120px;
+ left: 0px;
+ transform: rotate(20deg);
+}
+
+.bird .masks {
+  position: absolute;
+  bottom: 0;
+  right: -200px;
+  border-bottom: 0px solid transparent;
+  border-top: 84px solid transparent;
+  border-right: 35px solid #fff;
+}
+
+.masks:before {
+  content: "";
+  position: absolute;
+  bottom: -58px;
+  right: 7px;
+  width: 26px;
+  height: 25px;
+  background: #fff;
+  border-top: 3px solid #666;
+  z-index: 10;
 }
 
 @media (max-width: 767px) {

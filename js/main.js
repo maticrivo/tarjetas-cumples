@@ -39,7 +39,7 @@ var App = new function() {
 
   this.getForecast = function getForecast() {
     elScript = document.createElement('script');
-    elScript.src = "https://api.forecast.io/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2014-10-16T15:30:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
+    elScript.src = "https://api.forecast.io/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2015-10-17T15:30:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
     elScript.type = 'text/javascript';
 
     document.body.appendChild(elScript);
@@ -76,7 +76,7 @@ var App = new function() {
       position: new google.maps.LatLng(coordinates.party.lat, coordinates.party.lng)
     });
     var partyInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h3>Cumple Olivia</h3><div><p>Los esperamos el <strong>Jueves 16/10</strong> a las <strong>15:30</strong></p></div></div>'
+      content: '<div id="content"><h4>Cumple Olivia</h4><div><p>Los esperamos el <strong>Sabado 17/10</strong> a las <strong>15:30</strong></p></div></div>'
     });
     partyInfoWindow.open(map,partyMarker);
     google.maps.event.addListener(partyMarker, 'click', function() {
@@ -92,7 +92,7 @@ var App = new function() {
       position: new google.maps.LatLng(coordinates.paidParking.lat, coordinates.paidParking.lng)
     });
     var paidParkingInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h3>Estacionamiento</h3><div><p>Les recomendamos estacionar aca.</p></div></div>'
+      content: '<div id="content"><h4>Estacionamiento</h4><div><p>Les recomendamos estacionar aca.</p></div></div>'
     });
     google.maps.event.addListener(paidParkingMarker, 'click', function() {
       paidParkingInfoWindow.open(map,paidParkingMarker);
