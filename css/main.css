@@ -5,16 +5,23 @@ html, body {
   height: 100%;
 }
 body {
-  background: #ffffff;
+  background: #ffffff url(../images/bg.jpg) center center;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   color: #000000;
   font-size: 16px;
+  padding: 10px 0;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', serif;
   font-weight: 400;
   text-align: center;
+}
+h1 {
+  display: inline;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0 5px;
 }
 h3 {
   margin-top: 10px;
@@ -30,6 +37,12 @@ a {
 a:hover {
   color: #9274BA;
 }
+article p {
+  display: inline-block;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0 5px;
+}
 em {
   background: #000000;
   color: #fff;
@@ -37,6 +50,7 @@ em {
   padding: 0 5px;
 }
 header {
+  text-align: center;
   padding-bottom: 60px;
 }
 .container .jumbotron {
@@ -50,6 +64,7 @@ header {
   position: relative;
 }
 article {
+  padding-top: 30px;
   position: relative;
 }
 article canvas {
@@ -61,16 +76,6 @@ aside {
 aside #map-container {
   position: relative;
 }
-#buho-regalos {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin-left: -135px;
-  width: 270px;
-  height: 127px;
-  background: transparent url(../images/buho-regalos.png);
-  background-size: cover;
-}
 aside #map {
   color: #979797;
   height: 400px;
@@ -78,7 +83,7 @@ aside #map {
   -moz-box-shadow: 0 5px 5px rgba(2,2,2,.15);
   box-shadow: 0 5px 5px rgba(2,2,2,.15);
   border: 1px solid #fff;
-  margin-top: -15px;
+  margin-top: 0;
   margin-bottom: 10px;
 }
 aside #directions {
@@ -98,15 +103,6 @@ aside #directions-panel .adp-placemark {
   background-color: rgba(238, 238, 238, 0.6);
 }
 
-#buho-globos {
-  position: absolute;
-  bottom: -70px;
-  right: 0;
-  width: 93px;
-  height: 200px;
-  background: transparent url(../images/buho-globos.png);
-  background-size: cover;
-}
 
 .modal {
   color: #979797;
@@ -123,6 +119,7 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 }
 
 .bird {
+  display: none;
   border-top: 200px solid transparent;
   border-right: 200px solid #05B900;
   position: absolute;
