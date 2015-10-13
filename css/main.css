@@ -44,10 +44,14 @@ article p {
   padding: 0 5px;
 }
 em {
+	display: inline-block;
   background: #000000;
   color: #fff;
   font-style: normal;
   padding: 0 5px;
+}
+em strong {
+  font-size: 30px;
 }
 header {
   text-align: center;
