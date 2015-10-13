@@ -3,12 +3,12 @@ var App = new function() {
       elScript,
       coordinates = {
         party: {
-          lat: 32.181830,
-          lng: 34.925617
+          lat: 32.177704,
+          lng: 34.893889
         },
-        paidParking: {
-          lat: 32.182456,
-          lng: 34.927065
+        parking: {
+          lat: 32.176765,
+          lng: 34.893948
         }
       },
       map, geocoder, directionsService, directionsDisplay,
@@ -39,7 +39,7 @@ var App = new function() {
 
   this.getForecast = function getForecast() {
     elScript = document.createElement('script');
-    elScript.src = "https://api.forecast.io/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2015-10-17T15:30:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
+    elScript.src = "https://api.forecast.io/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2015-10-17T16:00:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
     elScript.type = 'text/javascript';
 
     document.body.appendChild(elScript);
@@ -68,6 +68,21 @@ var App = new function() {
       scrollwheel: false
     });
 
+    var parkingMarker = new google.maps.Marker({
+      map:map,
+      icon: "/images/parking.png",
+      draggable:false,
+      animation: google.maps.Animation.DROP,
+      position: new google.maps.LatLng(coordinates.parking.lat, coordinates.parking.lng)
+    });
+    var parkingInfoWindow = new google.maps.InfoWindow({
+      content: '<div id="content"><h4>Estacionamiento</h4><div><p>Les recomendamos estacionar aca.</p></div></div>'
+    });
+    google.maps.event.addListener(parkingMarker, 'click', function() {
+      parkingInfoWindow.open(map,parkingMarker);
+      partyInfoWindow.close();
+    });
+
     var partyMarker = new google.maps.Marker({
       map:map,
       icon: "/images/cake.png",
@@ -76,27 +91,12 @@ var App = new function() {
       position: new google.maps.LatLng(coordinates.party.lat, coordinates.party.lng)
     });
     var partyInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h4>Cumple Olivia</h4><div><p>Los esperamos el <strong>Sabado 17/10</strong> a las <strong>15:30</strong></p></div></div>'
+      content: '<div id="content"><h4>Cumple Olivia</h4><div><p>Los esperamos el <strong>Sabado 17/10</strong> a las <strong>16:00</strong></p></div></div>'
     });
     partyInfoWindow.open(map,partyMarker);
     google.maps.event.addListener(partyMarker, 'click', function() {
       partyInfoWindow.open(map,partyMarker);
-      paidParkingInfoWindow.close();
-    });
-
-    var paidParkingMarker = new google.maps.Marker({
-      map:map,
-      icon: "/images/parking-meter.png",
-      draggable:false,
-      animation: google.maps.Animation.DROP,
-      position: new google.maps.LatLng(coordinates.paidParking.lat, coordinates.paidParking.lng)
-    });
-    var paidParkingInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h4>Estacionamiento</h4><div><p>Les recomendamos estacionar aca.</p></div></div>'
-    });
-    google.maps.event.addListener(paidParkingMarker, 'click', function() {
-      paidParkingInfoWindow.open(map,paidParkingMarker);
-      partyInfoWindow.close();
+      parkingInfoWindow.close();
     });
 
     geocoder = new google.maps.Geocoder();
@@ -121,7 +121,7 @@ var App = new function() {
       if (geoStatus == google.maps.GeocoderStatus.OK) {
         directionsService.route({
           origin: geoResults[0].geometry.location,
-          destination: new google.maps.LatLng(coordinates.paidParking.lat, coordinates.paidParking.lng),
+          destination: new google.maps.LatLng(coordinates.parking.lat, coordinates.parking.lng),
           travelMode: google.maps.DirectionsTravelMode.DRIVING
         }, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {
