@@ -70,7 +70,7 @@ var App = new function() {
 
     var parkingMarker = new google.maps.Marker({
       map:map,
-      icon: "/images/parking.png",
+      icon: "images/parking.png",
       draggable:false,
       animation: google.maps.Animation.DROP,
       position: new google.maps.LatLng(coordinates.parking.lat, coordinates.parking.lng)
@@ -85,7 +85,7 @@ var App = new function() {
 
     var partyMarker = new google.maps.Marker({
       map:map,
-      icon: "/images/cake.png",
+      icon: "images/cake.png",
       draggable:false,
       animation: google.maps.Animation.DROP,
       position: new google.maps.LatLng(coordinates.party.lat, coordinates.party.lng)
