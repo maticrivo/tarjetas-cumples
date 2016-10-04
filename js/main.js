@@ -3,17 +3,17 @@ var App = new function() {
       elScript,
       coordinates = {
         party: {
-          lat: 32.177704,
-          lng: 34.893889
+          lat: 32.172732,
+          lng: 34.9229528
         },
         parking: {
-          lat: 32.176765,
-          lng: 34.893948
+          lat: 32.172491,
+          lng: 34.9216468
         }
       },
-      map, geocoder, directionsService, directionsDisplay,
+      map,
       MAPS_API_KEY = "AIzaSyDeb-THK2Z4pUkL990AKo2VeHpHK8avf3c",
-      FORECAST_API_KEY = "e35dffdc2d764ddb8992cdc5520f0305";
+      FORECAST_API_KEY = "43172a329aa16dfa17bdfed86101eb4e";
 
   this.rsvp = false;
 
@@ -22,8 +22,6 @@ var App = new function() {
     script.type = "text/javascript";
     script.src = "http://maps.googleapis.com/maps/api/js?key="+MAPS_API_KEY+"&sensor=true&callback=App.initGoogleMaps";
     document.body.appendChild(script);
-
-    document.getElementById("getdirections").addEventListener("click", App.showGetDirections);
 
     document.getElementById("ifrm").setAttribute("onload", "if(App.rsvp) {App.rsvpSent();}");
 
@@ -39,7 +37,7 @@ var App = new function() {
 
   this.getForecast = function getForecast() {
     elScript = document.createElement('script');
-    elScript.src = "https://api.forecast.io/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2015-10-17T16:00:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
+    elScript.src = "https://api.darksky.net/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2016-10-17T16:00:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
     elScript.type = 'text/javascript';
 
     document.body.appendChild(elScript);
@@ -91,47 +89,13 @@ var App = new function() {
       position: new google.maps.LatLng(coordinates.party.lat, coordinates.party.lng)
     });
     var partyInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h4>Cumple Olivia</h4><div><p>Los esperamos el <strong>Sabado 17/10</strong> a las <strong>16:00</strong></p></div></div>'
+      content: '<div id="content"><h4>Cumple Olivia</h4><div><p>Los esperamos el <strong>Lunes 17/10</strong> a las <strong>16:00</strong></p></div></div>'
     });
     partyInfoWindow.open(map,partyMarker);
     google.maps.event.addListener(partyMarker, 'click', function() {
       partyInfoWindow.open(map,partyMarker);
       parkingInfoWindow.close();
     });
-
-    geocoder = new google.maps.Geocoder();
-    directionsService = new google.maps.DirectionsService();
-    directionsDisplay = new google.maps.DirectionsRenderer({
-      draggable: true,
-    });
-    directionsDisplay.setMap(map);
-    directionsDisplay.setPanel(document.getElementById('directions-panel'));
-  };
-
-  this.showGetDirections = function showGetDirections(e) {
-    var directionsDiv = document.getElementById("directions");
-        directionsDiv.style.display = "block";
-
-    directionsDiv.querySelector("input").focus();
-  };
-
-  this.getDirections = function getDirections() {
-    var address = document.getElementById('address');
-    geocoder.geocode( { 'address': address.value}, function(geoResults, geoStatus) {
-      if (geoStatus == google.maps.GeocoderStatus.OK) {
-        directionsService.route({
-          origin: geoResults[0].geometry.location,
-          destination: new google.maps.LatLng(coordinates.parking.lat, coordinates.parking.lng),
-          travelMode: google.maps.DirectionsTravelMode.DRIVING
-        }, function(response, status) {
-          if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
-            address.blur();
-          }
-        });
-      }
-    });
-    return false;
   };
 
   this.validateRsvp = function validateRsvp() {
