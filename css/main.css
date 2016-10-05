@@ -9,8 +9,6 @@ body {
 	background: #ffffff url(../images/bg.jpg) center center;
   font-family: 'PT Sans', 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1.5rem;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
-  position: relative;
 }
 
 header {
@@ -21,6 +19,8 @@ header {
 h1 {
   font-family: 'Amatic SC', cursive;
   font-size: 5.3rem;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 a {
@@ -31,6 +31,10 @@ a {
 
 a:hover {
   color: #9274BA;
+}
+
+section {
+	background-color: rgba(255,255,255,0.8);
 }
 
 aside #map-container {
