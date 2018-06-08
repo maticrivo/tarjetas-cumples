@@ -1,4 +1,2 @@
-cumple-olivia-cumple
-===============
-
-Tarjetas de invitación a los cumples de Oli.
+# Tarjetas de cumpleaños de Olivia y Amanda
+---
