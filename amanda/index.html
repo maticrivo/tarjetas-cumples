@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <!-- The first thing in any HTML file should be the charset -->
+  <meta charset="utf-8">
+  <!-- Make the page mobile compatible -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Amanda cumple 1 año</title>
+  <meta name="description" content="Celebramos el cumple de Amanda el Sabado, 23/6 a las 17:00 horas en el parque de Kfar Saba." />
+
+  <meta property="og:url" content="https://cumple-amanda.now.sh" />
+  <meta property="og:title" content="Amanda Cumple 1 año" />
+  <meta property="og:description" content="Sabado, 23/6 a las 17:00 horas en el parque de Kfar Saba." />
+  <meta property="og:image" content="http://cumple-amanda.now.sh/images/invite.jpg" />
+  <meta property="og:image:secure" content="https://cumple-amanda.now.sh/images/invite.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="950" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+	<article class="container">
+		<main class="row">
+			<section class="col-md-5">
+        <header>
+          <h1>Amanda</h1>
+          <h3>cumple 1 año</h3>
+        </header>
+				<p>Celebramos el cumple de Amanda el <strong>Sabado, 23/6</strong> a las <strong>17:00 horas</strong> en el parque de Kfar Saba.</p>
+				<p>
+					Estate atento al pron&oacute;stico y al whatsapp, en caso de mucho calor se suspende o se cambia de lugar.
+					<br />
+					<span id="temperature"><img src="images/loader.gif" /></span> <canvas id="skycon" width="48" height="48"></canvas>
+				</p>
+				<p>
+				  Confirmanos tu presencia, por whatsapp
+				  <br />
+				  o completando este <a href="#rsvp" data-toggle="modal">formulario</a>.
+				</p>
+			</section>
+			<aside class="col-md-7">
+			  <div id="map-container">
+			    <div id="map"></div>
+			  </div>
+			</aside>
+		</main>
+	</article>
+
+  <div class="modal fade" id="rsvp" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <iframe id="ifrm" name="ifrm" class="hide"></iframe>
+      <form class="form-horizontal" role="form" action="https://docs.google.com/forms/d/e/1FAIpQLSduUS-kZ2db2XXw95ZcM6SbBokTxrYk4bBGxNhKodORf-o2RA/formResponse" method="POST" id="ss-form" target="ifrm" onsubmit="return App.validateRsvp();">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Confirmación</h2>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="nombre" class="col-md-4 control-label">Nombre</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="nombre" name="entry.674205106" placeholder="Nombre" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="venis" class="col-md-4 control-label">Venis?</label>
+              <div class="col-md-8">
+                <div class="radio">
+                  <label><input type="radio" name="entry.235877356" id="venis" value="Si" required> Si</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="entry.235877356" id="novenis" value="No" required> No</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="conquien" class="col-md-4 control-label">Con quienes venis?</label>
+              <div class="col-md-8">
+                <textarea class="form-control" rows="3" id="conquien" name="entry.686059297" placeholder="Con quienes venis?"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="alert alert-success fade" id="rsvp.message">Gracias!</div> <button id="rsvp.submit" type="submit" class="btn btn-primary">Enviar confirmación</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="js/skycons.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
