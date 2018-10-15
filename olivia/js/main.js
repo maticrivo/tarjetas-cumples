@@ -20,24 +20,15 @@ var App = new function() {
   this.init = function init() {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "http://maps.googleapis.com/maps/api/js?key="+MAPS_API_KEY+"&sensor=true&callback=App.initGoogleMaps";
+    script.src = "https://maps.googleapis.com/maps/api/js?key="+MAPS_API_KEY+"&callback=App.initGoogleMaps";
     document.body.appendChild(script);
-
-    document.getElementById("ifrm").setAttribute("onload", "if(App.rsvp) {App.rsvpSent();}");
-
-    $('#rsvp').on('hidden.bs.modal', function () {
-      document.getElementById("ss-form").reset();
-      document.getElementById("rsvp.submit").removeAttribute("disabled");
-      document.getElementById("rsvp.message").classList.remove("in");
-      self.rsvp = false;
-    });
 
     self.getForecast();
   };
 
   this.getForecast = function getForecast() {
     elScript = document.createElement('script');
-    elScript.src = "https://api.darksky.net/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2016-10-17T16:00:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
+    elScript.src = "https://api.darksky.net/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2018-06-23T17:00:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
     elScript.type = 'text/javascript';
 
     document.body.appendChild(elScript);
@@ -46,7 +37,7 @@ var App = new function() {
   this.renderForecast = function renderForecast(response) {
     elScript && elScript.parentNode && elScript.parentNode.removeChild(elScript);
     if (response && response.currently) {
-      var skycon = new Skycons({"color": "#a586c5", "resizeClear": true});
+      var skycon = new Skycons({"color": "#f48da8", "resizeClear": true});
           skycon.add("skycon", Skycons[response.currently.icon.replace(/[-]/g, "_").toUpperCase()]);
           skycon.play();
 
@@ -74,7 +65,7 @@ var App = new function() {
       position: new google.maps.LatLng(coordinates.parking.lat, coordinates.parking.lng)
     });
     var parkingInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h4>Estacionamiento</h4><div><p>Les recomendamos estacionar aca.</p></div></div>'
+      content: '<div id="content"><h4>Estacionamiento</h4><p>Les recomendamos estacionar aca.</p></div>'
     });
     google.maps.event.addListener(parkingMarker, 'click', function() {
       parkingInfoWindow.open(map,parkingMarker);
@@ -89,7 +80,7 @@ var App = new function() {
       position: new google.maps.LatLng(coordinates.party.lat, coordinates.party.lng)
     });
     var partyInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h4>Cumple Olivia</h4><div><p>Los esperamos el <strong>Lunes 17/10</strong> a las <strong>16:00</strong></p></div></div>'
+      content: '<div id="content"><h4>Cumple Olivia</h4><p>Los esperamos el <strong>Sabado 20/10</strong> a las <strong>15:00</strong></p></div>'
     });
     partyInfoWindow.open(map,partyMarker);
     google.maps.event.addListener(partyMarker, 'click', function() {
@@ -97,23 +88,6 @@ var App = new function() {
       parkingInfoWindow.close();
     });
   };
-
-  this.validateRsvp = function validateRsvp() {
-    if (!document.getElementById("nombre").value.trim().length) {
-      alert('¿Quien sos?');
-      return false;
-    }
-    if (!document.getElementById("venis").checked && !document.getElementById("novenis").checked) {
-      alert("¿Venis o no?");
-      return false;
-    }
-    document.getElementById("rsvp.submit").setAttribute("disabled", "disabled");
-    self.rsvp = true;
-    return true;
-  };
-
-  this.rsvpSent = function rsvpSent() {
-    document.getElementById("rsvp.message").classList.add("in");
-  };
 };
+
 window.onload = App.init;

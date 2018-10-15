@@ -1,14 +1,15 @@
 html,
 body {
 	width: 100%;
-  min-height: 100%;
+  height: 100%;
   font-size: 16px;
 }
 
 body {
-	background: #ffffff url(../images/bg.jpg) center center;
-  font-family: 'PT Sans', 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
+  background: #ffffff url(../images/bg.jpg) center center;
+  background-size: contain;
 }
 
 header {
@@ -16,25 +17,37 @@ header {
   padding-bottom: 60px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', cursive;
+}
+
 h1 {
-  font-family: 'Amatic SC', cursive;
   font-size: 5.3rem;
-  display: inline-block;
-  background-color: rgba(255, 255, 255, 0.8);
+  color: #f48da8;
+}
+
+h3 {
+  font-size: 2.5rem;
+  color: #201824;
 }
 
 a {
-  color: #9274BA;
+  color: #f48da8;
   text-decoration: none;
   font-weight: 600;
 }
 
 a:hover {
-  color: #9274BA;
+  color: #f48da8;
+  text-decoration: underline;
+}
+
+article {
+  height: 100%;
 }
 
 section {
-	background-color: rgba(255,255,255,0.8);
+	background-color: rgba(255, 255, 255, 0.9);
 }
 
 aside #map-container {
@@ -44,10 +57,17 @@ aside #map-container {
 aside #map {
   color: #979797;
   height: 400px;
-  -webkit-box-shadow: 0 5px 5px rgba(2,2,2,.15);
-  -moz-box-shadow: 0 5px 5px rgba(2,2,2,.15);
-  box-shadow: 0 5px 5px rgba(2,2,2,.15);
+  -webkit-box-shadow: 0 5px 5px rgba(2, 2, 2, 0.15);
+  -moz-box-shadow: 0 5px 5px rgba(2, 2, 2, 0.15);
+  box-shadow: 0 5px 5px rgba(2, 2, 2, 0.15);
   border: 1px solid #fff;
   margin-top: 0;
   margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  article, main {
+    display: flex;
+    align-items: center;
+  }
 }

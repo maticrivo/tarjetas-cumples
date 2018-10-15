@@ -6,35 +6,35 @@
   <!-- Make the page mobile compatible -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title"              content="Cumple Olivia 4 años" />
-  <meta property="og:description"        content="Celebramos el cumple de Olivia el Lunes, 17/10 a las 16:00 horas en el parque de Kfar Saba." />
-  <meta property="og:image"              content="http://maticrivo.github.io/cumple-olivia/images/invite.png" />
+  <title>Olivia cumple 6 años</title>
+  <meta name="description" content="Celebramos el cumple de Olivia el Sabado, 20/10 a las 15:00 horas en el parque de Kfar Saba." />
 
-  <title>Cumple Olivia 4 años</title>
+  <meta property="og:url" content="https://cumple-olivia.now.sh" />
+  <meta property="og:title" content="Olivia Cumple 6 años" />
+  <meta property="og:description" content="Sabado, 20/10 a las 15:00 horas en el parque de Kfar Saba." />
+  <meta property="og:image" content="http://cumple-olivia.now.sh/images/invite.jpg" />
+  <meta property="og:image:secure" content="https://cumple-olivia.now.sh/images/invite.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="950" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
 
-  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans:400,300,600|PT+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 	<article class="container">
-		<header>
-			<h1>Cumple Olivia 4 años</h1>
-		</header>
 		<main class="row">
 			<section class="col-md-5">
-				<p>Celebramos el cumple de Olivia el <strong>Lunes, 17/10</strong> a las <strong>16:00 horas</strong> en el parque de Kfar Saba.</p>
-				<p>
-					Estate atento al pron&oacute;stico y al whatsapp, en caso de lluvia se suspende o se cambia de lugar.
-					<br />
-					<span id="temperature"><img src="images/loader.gif" /></span> <canvas id="skycon" width="48" height="48"></canvas>
-				</p>
-				<p>
-				  Confirmanos tu presencia, por whatsapp
-				  <br />
-				  o completando este <a href="#rsvp" data-toggle="modal">formulario</a>.
-				</p>
+        <header>
+          <h1>Olivia</h1>
+          <h3>cumple 6 años</h3>
+        </header>
+				<p>Celebramos el cumplea&ntilde;os de Olivia el <strong>Sabado, 20/10</strong> a las <strong>15:00 horas</strong> en el parque de Kfar Saba.</p>
+				<p><span id="temperature"><img src="images/loader.gif" /></span> <canvas id="skycon" width="48" height="48"></canvas></p>
+				<p>Confirmanos tu presencia por whatsapp.</p>
 			</section>
 			<aside class="col-md-7">
 			  <div id="map-container">
@@ -43,48 +43,6 @@
 			</aside>
 		</main>
 	</article>
-
-  <div class="modal fade" id="rsvp" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-      <iframe id="ifrm" name="ifrm" class="hide"></iframe>
-      <form class="form-horizontal" role="form" action="https://docs.google.com/forms/d/e/1FAIpQLSf3TOWeBlSy0_AR1azbNkrg5TwEtCEGOKhNVMnfkqcn3W3BTA/formResponse" method="POST" id="ss-form" target="ifrm" onsubmit="return App.validateRsvp();">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h2 class="modal-title">Confirmación</h2>
-          </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <label for="nombre" class="col-md-4 control-label">Nombre</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control" id="nombre" name="entry.674205106" placeholder="Nombre" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="venis" class="col-md-4 control-label">Vas a venir?</label>
-              <div class="col-md-8">
-                <div class="radio">
-                  <label><input type="radio" name="entry.235877356" id="venis" value="Si" required> Si</label>
-                </div>
-                <div class="radio">
-                  <label><input type="radio" name="entry.235877356" id="novenis" value="No" required> No</label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="conquien" class="col-md-4 control-label">Con quienes venis?</label>
-              <div class="col-md-8">
-                <textarea class="form-control" rows="3" id="conquien" name="entry.1619805491" placeholder="Con quienes venis?"></textarea>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <div class="alert alert-success fade" id="rsvp.message">Gracias!</div> <button id="rsvp.submit" type="submit" class="btn btn-primary">Enviar confirmación</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
 
   <script src="js/jquery-3.1.1.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
