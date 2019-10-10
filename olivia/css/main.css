@@ -1,12 +1,13 @@
 html,
 body {
-	width: 100%;
+  width: 100%;
   height: 100%;
   font-size: 16px;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
   font-size: 1.5rem;
   background: #ffffff url(../images/bg.jpg) center center;
   background-size: contain;
@@ -17,13 +18,18 @@ header {
   padding-bottom: 60px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lobster', cursive;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Indie Flower", cursive;
 }
 
 h1 {
   font-size: 5.3rem;
-  color: #f48da8;
+  color: #5e7e73;
 }
 
 h3 {
@@ -32,13 +38,13 @@ h3 {
 }
 
 a {
-  color: #f48da8;
+  color: #5e7e73;
   text-decoration: none;
   font-weight: 600;
 }
 
 a:hover {
-  color: #f48da8;
+  color: #5e7e73;
   text-decoration: underline;
 }
 
@@ -47,7 +53,7 @@ article {
 }
 
 section {
-	background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 aside #map-container {
@@ -66,7 +72,8 @@ aside #map {
 }
 
 @media screen and (min-width: 768px) {
-  article, main {
+  article,
+  main {
     display: flex;
     align-items: center;
   }

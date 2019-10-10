@@ -28,7 +28,7 @@ var App = new function() {
 
   this.getForecast = function getForecast() {
     elScript = document.createElement('script');
-    elScript.src = "https://api.darksky.net/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2018-06-23T17:00:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
+    elScript.src = "https://api.darksky.net/forecast/"+FORECAST_API_KEY+"/"+coordinates.party.lat+","+coordinates.party.lng+",2019-10-21T15:00:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
     elScript.type = 'text/javascript';
 
     document.body.appendChild(elScript);
@@ -37,7 +37,7 @@ var App = new function() {
   this.renderForecast = function renderForecast(response) {
     elScript && elScript.parentNode && elScript.parentNode.removeChild(elScript);
     if (response && response.currently) {
-      var skycon = new Skycons({"color": "#f48da8", "resizeClear": true});
+      var skycon = new Skycons({"color": "#5e7e73", "resizeClear": true});
           skycon.add("skycon", Skycons[response.currently.icon.replace(/[-]/g, "_").toUpperCase()]);
           skycon.play();
 
@@ -80,7 +80,7 @@ var App = new function() {
       position: new google.maps.LatLng(coordinates.party.lat, coordinates.party.lng)
     });
     var partyInfoWindow = new google.maps.InfoWindow({
-      content: '<div id="content"><h4>Cumple Olivia</h4><p>Los esperamos el <strong>Sabado 20/10</strong> a las <strong>15:00</strong></p></div>'
+      content: '<div id="content"><h4>Cumple Olivia</h4><p>Los esperamos el <strong>Lunes 21/10</strong> a las <strong>15:00</strong></p></div>'
     });
     partyInfoWindow.open(map,partyMarker);
     google.maps.event.addListener(partyMarker, 'click', function() {
