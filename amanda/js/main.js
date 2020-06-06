@@ -49,7 +49,7 @@ var App = new (function() {
       coordinates.party.lat +
       "," +
       coordinates.party.lng +
-      ",2018-06-15T16:30:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
+      ",2020-06-13T16:00:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
     elScript.type = "text/javascript";
 
     document.body.appendChild(elScript);
@@ -60,7 +60,7 @@ var App = new (function() {
       elScript.parentNode &&
       elScript.parentNode.removeChild(elScript);
     if (response && response.currently) {
-      var skycon = new Skycons({ color: "#93d074", resizeClear: true });
+      var skycon = new Skycons({ color: "#3c7bb7", resizeClear: true });
       skycon.add(
         "skycon",
         Skycons[response.currently.icon.replace(/[-]/g, "_").toUpperCase()]
@@ -118,7 +118,7 @@ var App = new (function() {
     });
     var partyInfoWindow = new google.maps.InfoWindow({
       content:
-        '<div id="content"><h4>Cumple Amanda</h4><p>Los esperamos el <strong>Sabado 15/6</strong> a las <strong>16:30</strong></p></div>'
+        '<div id="content"><h4>Cumple Amanda</h4><p>Los esperamos el <strong>Sabado 13/6</strong> a las <strong>16:00</strong></p></div>'
     });
     partyInfoWindow.open(map, partyMarker);
     google.maps.event.addListener(partyMarker, "click", function() {

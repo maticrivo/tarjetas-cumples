@@ -18,18 +18,10 @@ header {
   padding-bottom: 60px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Lobster", cursive;
-}
-
 h1 {
   font-size: 5.3rem;
-  color: #93d074;
+  color: #3c7bb7;
+  font-family: "Oliver", sans-serif;
 }
 
 h3 {
@@ -38,13 +30,13 @@ h3 {
 }
 
 a {
-  color: #93d074;
+  color: #3c7bb7;
   text-decoration: none;
   font-weight: 600;
 }
 
 a:hover {
-  color: #93d074;
+  color: #3c7bb7;
   text-decoration: underline;
 }
 
