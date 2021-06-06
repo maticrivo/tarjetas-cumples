@@ -1,21 +1,19 @@
-var App = new (function() {
+var App = new (function () {
   var self = this,
     elScript,
     coordinates = {
       party: {
-        lat: 32.172732,
-        lng: 34.9229528
+        lat: 32.19288,
+        lng: 34.86231,
       },
       parking: {
-        lat: 32.172491,
-        lng: 34.9216468
-      }
+        lat: 32.19291,
+        lng: 34.86311,
+      },
     },
     map,
     MAPS_API_KEY = "AIzaSyDeb-THK2Z4pUkL990AKo2VeHpHK8avf3c",
     FORECAST_API_KEY = "43172a329aa16dfa17bdfed86101eb4e";
-
-  this.rsvp = false;
 
   this.init = function init() {
     var script = document.createElement("script");
@@ -25,17 +23,6 @@ var App = new (function() {
       MAPS_API_KEY +
       "&callback=App.initGoogleMaps";
     document.body.appendChild(script);
-
-    document
-      .getElementById("ifrm")
-      .setAttribute("onload", "if(App.rsvp) {App.rsvpSent();}");
-
-    $("#rsvp").on("hidden.bs.modal", function() {
-      document.getElementById("ss-form").reset();
-      document.getElementById("rsvp.submit").removeAttribute("disabled");
-      document.getElementById("rsvp.message").classList.remove("in");
-      self.rsvp = false;
-    });
 
     self.getForecast();
   };
@@ -49,7 +36,7 @@ var App = new (function() {
       coordinates.party.lat +
       "," +
       coordinates.party.lng +
-      ",2020-06-13T16:00:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
+      ",2021-06-12T10:00:00+0300?units=si&exclude=minutely,hourly,flags&callback=App.renderForecast";
     elScript.type = "text/javascript";
 
     document.body.appendChild(elScript);
@@ -60,7 +47,7 @@ var App = new (function() {
       elScript.parentNode &&
       elScript.parentNode.removeChild(elScript);
     if (response && response.currently) {
-      var skycon = new Skycons({ color: "#3c7bb7", resizeClear: true });
+      var skycon = new Skycons({ color: "#c90101", resizeClear: true });
       skycon.add(
         "skycon",
         Skycons[response.currently.icon.replace(/[-]/g, "_").toUpperCase()]
@@ -84,7 +71,7 @@ var App = new (function() {
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       mapTypeControl: false,
       keyboardShortcuts: false,
-      scrollwheel: false
+      scrollwheel: false,
     });
 
     var parkingMarker = new google.maps.Marker({
@@ -95,13 +82,13 @@ var App = new (function() {
       position: new google.maps.LatLng(
         coordinates.parking.lat,
         coordinates.parking.lng
-      )
+      ),
     });
     var parkingInfoWindow = new google.maps.InfoWindow({
       content:
-        '<div id="content"><h4>Estacionamiento</h4><p>Les recomendamos estacionar aca.</p></div>'
+        '<div id="content"><h4>Estacionamiento</h4><p>Estacionamiento gratuito.</p></div>',
     });
-    google.maps.event.addListener(parkingMarker, "click", function() {
+    google.maps.event.addListener(parkingMarker, "click", function () {
       parkingInfoWindow.open(map, parkingMarker);
       partyInfoWindow.close();
     });
@@ -114,38 +101,17 @@ var App = new (function() {
       position: new google.maps.LatLng(
         coordinates.party.lat,
         coordinates.party.lng
-      )
+      ),
     });
     var partyInfoWindow = new google.maps.InfoWindow({
       content:
-        '<div id="content"><h4>Cumple Amanda</h4><p>Los esperamos el <strong>Sabado 13/6</strong> a las <strong>16:00</strong></p></div>'
+        '<div id="content"><h4>Cumple Amanda</h4><p>Los esperamos el <strong>Sabado 12/6</strong> a las <strong>10:00</strong></p></div>',
     });
     partyInfoWindow.open(map, partyMarker);
-    google.maps.event.addListener(partyMarker, "click", function() {
+    google.maps.event.addListener(partyMarker, "click", function () {
       partyInfoWindow.open(map, partyMarker);
       parkingInfoWindow.close();
     });
-  };
-
-  this.validateRsvp = function validateRsvp() {
-    if (!document.getElementById("nombre").value.trim().length) {
-      alert("¿Quien sos?");
-      return false;
-    }
-    if (
-      !document.getElementById("venis").checked &&
-      !document.getElementById("novenis").checked
-    ) {
-      alert("¿Venis o no?");
-      return false;
-    }
-    document.getElementById("rsvp.submit").setAttribute("disabled", "disabled");
-    self.rsvp = true;
-    return true;
-  };
-
-  this.rsvpSent = function rsvpSent() {
-    document.getElementById("rsvp.message").classList.add("in");
   };
 })();
 

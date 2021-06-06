@@ -6,25 +6,25 @@
     <!-- Make the page mobile compatible -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Amanda cumple 3 años</title>
+    <title>Amanda cumple 4 años</title>
     <meta
       name="description"
-      content="Celebramos el cumple de Amanda el Sabado, 13/6 a las 16:00 horas en el parque de Kfar Saba."
+      content="Celebramos el cumple de Amanda el Sabado, 12/6 a las 10:00 horas en el sportek Raanana."
     />
 
-    <meta property="og:url" content="https://cumple-amanda.now.sh" />
-    <meta property="og:title" content="Amanda Cumple 3 años" />
+    <meta property="og:url" content="https://cumple-amanda.vercel.app" />
+    <meta property="og:title" content="Amanda Cumple 4 años" />
     <meta
       property="og:description"
-      content="Sabado, 13/6 a las 16:00 horas en el parque de Kfar Saba."
+      content="Sabado, 12/6 a las 10:00 horas en el sportek Raanana."
     />
     <meta
       property="og:image"
-      content="http://cumple-amanda.now.sh/images/invite.jpg"
+      content="http://cumple-amanda.vercel.app/images/invite.jpg"
     />
     <meta
       property="og:image:secure"
-      content="https://cumple-amanda.now.sh/images/invite.jpg"
+      content="https://cumple-amanda.vercel.app/images/invite.jpg"
     />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="950" />
@@ -51,25 +51,24 @@
         <section class="col-md-5">
           <header>
             <h1>Amanda</h1>
-            <h3>CUMPLE 3 AÑOS</h3>
+            <h3>Cumple 4 años</h3>
           </header>
           <p>
-            Celebramos el cumple de Amanda el <strong>Sabado, 13/6</strong> a
-            las <strong>16:00 horas</strong> en el parque de Kfar Saba.
+            Celebramos el cumple de Amanda el <strong>Sabado, 12/6</strong> a
+            las <strong>10:00 horas</strong> en el sportek de Raanana, en las
+            fuentes de agua.
           </p>
           <p>
-            Posiblemente haya juegos con agua, vengan listos para mojarse.
+            Traer malla, toalla, protector solar y ganas de mojarse.
+            <br />
+            Hay estacionamiento gratuito y una pista para monopatin.
             <br />
             <span id="temperature">
-              <img src="images/loader.gif" width="60" height="60" />
+              <img src="images/loader.gif" width="48" height="48" />
             </span>
-            <canvas id="skycon" width="48" height="48"></canvas>
+            <canvas id="skycon" width="30" height="30"></canvas>
           </p>
-          <p>
-            Confirmanos tu presencia, por whatsapp
-            <br />
-            o completando este <a href="#rsvp" data-toggle="modal">formulario</a>.
-          </p>
+          <p>Confirmanos tu presencia por whatsapp.</p>
         </section>
         <aside class="col-md-7">
           <div id="map-container">
@@ -78,98 +77,6 @@
         </aside>
       </main>
     </article>
-
-    <div class="modal fade" id="rsvp" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <iframe id="ifrm" name="ifrm" class="hide"></iframe>
-        <form
-          class="form-horizontal"
-          role="form"
-          action="https://docs.google.com/forms/d/e/1FAIpQLSe_WXDjBRj0Rd3QV_KRI2n4_rC6Knn5Hl8skyHwxgtAKhESeg/formResponse"
-          method="POST"
-          id="ss-form"
-          target="ifrm"
-          onsubmit="return App.validateRsvp();"
-        >
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">
-                &times;
-              </button>
-              <h2 class="modal-title">Confirmación</h2>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label for="nombre" class="col-md-4 control-label"
-                  >Nombre</label
-                >
-                <div class="col-md-8">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="nombre"
-                    name="entry.674205106"
-                    placeholder="Nombre"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="venis" class="col-md-4 control-label">Venis?</label>
-                <div class="col-md-8">
-                  <div class="radio">
-                    <label
-                      ><input
-                        type="radio"
-                        name="entry.235877356"
-                        id="venis"
-                        value="Si"
-                        required
-                      />
-                      Si</label
-                    >
-                  </div>
-                  <div class="radio">
-                    <label
-                      ><input
-                        type="radio"
-                        name="entry.235877356"
-                        id="novenis"
-                        value="No"
-                        required
-                      />
-                      No</label
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="conquien" class="col-md-4 control-label"
-                  >Con quienes venis?</label
-                >
-                <div class="col-md-8">
-                  <textarea
-                    class="form-control"
-                    rows="3"
-                    id="conquien"
-                    name="entry.686059297"
-                    placeholder="Con quienes venis?"
-                  ></textarea>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <div class="alert alert-success fade" id="rsvp.message">
-                Gracias!
-              </div>
-              <button id="rsvp.submit" type="submit" class="btn btn-primary">
-                Enviar confirmación
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
 
     <script src="js/jquery-3.1.1.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->

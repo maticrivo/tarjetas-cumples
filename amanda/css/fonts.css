@@ -1,4 +1,11 @@
 @font-face {
-  font-family: "Oliver";
-  src: url("../fonts/oliver.ttf") format("truetype");
+  font-family: "Miraculous";
+  src: url("../fonts/Miraculous.eot");
+  src: url("../fonts/Miraculous.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Miraculous.woff") format("woff");
+}
+
+@font-face {
+  font-family: "LobsterTwo";
+  src: url("../fonts/LobsterTwo-Regular.ttf") format("truetype");
 }

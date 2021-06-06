@@ -10,7 +10,7 @@ body {
     Arial, sans-serif;
   font-size: 1.5rem;
   background: #ffffff url(../images/bg.jpg) center center;
-  background-size: contain;
+  background-size: cover;
 }
 
 header {
@@ -20,23 +20,24 @@ header {
 
 h1 {
   font-size: 5.3rem;
-  color: #3c7bb7;
-  font-family: "Oliver", sans-serif;
+  color: #c90101;
+  font-family: "Miraculous", sans-serif;
 }
 
 h3 {
   font-size: 2.5rem;
   color: #1c1b35;
+  font-family: "LobsterTwo", sans-serif;
 }
 
 a {
-  color: #3c7bb7;
+  color: #c90101;
   text-decoration: none;
   font-weight: 600;
 }
 
 a:hover {
-  color: #3c7bb7;
+  color: #c90101;
   text-decoration: underline;
 }
 
