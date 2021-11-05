@@ -10,7 +10,7 @@ body {
     Arial, sans-serif;
   font-size: 1.5rem;
   background: #ffffff url(../images/bg.jpg) center center;
-  background-size: contain;
+  background-size: cover;
 }
 
 header {
@@ -24,17 +24,31 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Indie Flower", cursive;
+  font-family: "Shera", cursive;
 }
 
 h1 {
   font-size: 5.3rem;
-  color: #5e7e73;
+  background: -webkit-linear-gradient(
+    rgba(248, 0, 254, 0.89),
+    rgba(214, 126, 254, 0.94) 32.35%,
+    #9000ff 52.1%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 7rem;
 }
 
 h3 {
   font-size: 2.5rem;
-  color: #201824;
+  background: -webkit-linear-gradient(
+    rgba(254, 243, 0, 1),
+    rgba(255, 114, 0, 1) 45.38%,
+    #ff0000 82.35%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 2.3rem;
 }
 
 a {
